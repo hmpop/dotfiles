@@ -8,7 +8,7 @@ export EDITOR="vim"
 #export TERM="xterm-256color"
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
-export LS_COLORS=Gxfxcxdxbxegedabagacad
+#export LS_COLORS=Gxfxcxdxbxegedabagacad
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -46,7 +46,7 @@ function tmuxkill() {
 
 # Alias {{{
 alias vi="vim"
-alias vim="mvim -v"
+#alias vim="mvim -v"
 alias curl="curl -w '\n'"
 alias r="source ~/.zshrc"
 alias tat='tmux new-session -As $(basename "$PWD" | tr . -)' # will attach if session exists, or create a new session
@@ -314,7 +314,7 @@ HISTFILE=~/.zsh_history
 # }}}
 
 # oh-my-zsh{{{
-export ZSH=/Users/Min/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 #export MAVEN_HOME=/usr/local/share/apache-maven-3.3.3
 # themes:  sorin minimal sunrise ys
 ZSH_THEME="sorin"
