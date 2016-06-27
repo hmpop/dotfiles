@@ -318,10 +318,12 @@ export ZSH=/Users/Min/.oh-my-zsh
 #export MAVEN_HOME=/usr/local/share/apache-maven-3.3.3
 # themes:  sorin minimal sunrise ys
 ZSH_THEME="sorin"
-plugins=(git,gradle,docker,_spring,mvn)
+plugins=(git gradle docker _spring mvn)
 source $ZSH/oh-my-zsh.sh
 # }}}
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 #export SDKMAN_DIR="/Users/Min/.sdkman"
 #[[ -s "/Users/Min/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/Min/.sdkman/bin/sdkman-init.sh"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
