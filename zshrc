@@ -13,12 +13,9 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+#export GOPATH=$HOME/Golang
+#export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
-# }}}
-
-# Go {{{
-export GOPATH=$HOME/Golang
 # }}}
 
 # Ruby {{{
@@ -313,12 +310,12 @@ HISTFILE=~/.zsh_history
 # }
 # }}}
 
-# oh-my-zsh{{{
+# oh-my-zsh {{{
 export ZSH=~/.oh-my-zsh
 #export MAVEN_HOME=/usr/local/share/apache-maven-3.3.3
 # themes:  sorin minimal sunrise ys
 ZSH_THEME="sorin"
-plugins=(git gradle docker _spring mvn)
+plugins=(git vi_mode)
 source $ZSH/oh-my-zsh.sh
 # }}}
 

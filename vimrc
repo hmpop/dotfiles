@@ -3,7 +3,9 @@
 syntax on
 " Use vim, not vi api
 set nocompatible
+
 set tags+=~/.vim/systags
+
 " markdown preview setting
 " set shell=bash\ -i
 " au FileType markdown setl shell=bash\ -i
@@ -68,11 +70,11 @@ set shiftwidth=4
 set number
 
 " Highlight tailing whitespace
- set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:\ \ ,trail:·
 
 " Get rid of the delay when pressing O (for example)
 " http://stackoverflow.com/questions/2158516/vim-delay-before-o-opens-a-new-line
- set timeout timeoutlen=1000 ttimeoutlen=100
+set timeout timeoutlen=1000 ttimeoutlen=100
 
 " Always show status bar
 set laststatus=2
@@ -124,11 +126,6 @@ let g:netrw_liststyle=3
 " autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
 " set colorcolumn=80
 
-if stridx(getcwd(),'UnixC')>-1
-    let g:C_Libs='-L./lib -lerror -lm'
-    set tags+=~/UnixC/include/tags
-endif
-
 let g:formatdef_min_c='"astyle --mode=c --style=kr --pad-oper --pad-header --break-blocks"'
 let g:formatters_c = ['min_c']
 
@@ -136,8 +133,41 @@ noremap <silent><F3> :Autoformat<CR>
 " }}}
 
 " Plugins {{{
-execute pathogen#infect()
-filetype plugin indent on " required by Pathogen Plugin Manager
+filetype off
+" set the runtime path to include Vundle and initialize
+
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
+
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Raimondi/delimitMate'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-surround'
+Plugin 'WolfgangMehner/vim-plugins'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/tabular'
+Plugin 'mileszs/ack.vim'
+Plugin 'bkad/CamelCaseMotion'
+Plugin 'airblade/vim-gitgutter'
+
+call vundle#end()
+filetype plugin indent on
 
 " Theme
 set background=dark
@@ -169,7 +199,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Airline (status line)
 let g:airline_powerline_fonts = 1
-
+" let g:airline#extensions#tabline#enabled = 1
 " Gist authorisation settings
 let g:github_user = $GITHUB_USER
 let g:github_token = $GITHUB_TOKEN
@@ -307,6 +337,6 @@ map! <c-\> <ESC>:q<CR>
 " map <Leader>ct :w<cr>:!cucumber<cr>
 
 " Tmux style window selection
-map <Leader>ws :ChooseWin<cr>
+" map <Leader>ws :ChooseWin<cr>
 " }}}
 
