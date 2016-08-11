@@ -142,6 +142,7 @@ Plugin 'VundleVim/Vundle.vim'
 " keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 
+" Plugin 'mkitt/tabline.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'godlygeek/csapprox'
 Plugin 'scrooloose/nerdtree'
@@ -345,3 +346,7 @@ map! <c-\> <ESC>:q<CR>
 " }}}
 
 " autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
+hi TabLineFill  ctermfg=Black  ctermbg=Green     cterm=NONE
+hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
