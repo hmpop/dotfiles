@@ -349,4 +349,10 @@ map! <c-\> <ESC>:q<CR>
 
 hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
 hi TabLineFill  ctermfg=Black  ctermbg=Green     cterm=NONE
-hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=NONE
+hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=bold
+
+" Vimgdb setting
+let g:vimgdb_debug_file=""
+run macros/gdb_mappings.vim
+
+
