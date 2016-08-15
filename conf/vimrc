@@ -169,7 +169,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
+" Plugin 'mattn/gist-vim'
+Plugin 'lambdalisue/vim-gista'
 
 call vundle#end()
 filetype plugin indent on
