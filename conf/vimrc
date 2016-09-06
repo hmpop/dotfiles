@@ -42,7 +42,8 @@ set ignorecase
 set hidden
 
 " Turn word wrap off
-" set nowrap
+set nowrap
+set lbr
 
 " Allow backspace to delete end of line, indent and start of line characters
 set backspace=indent,eol,start
@@ -144,6 +145,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugin 'mkitt/tabline.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'schickling/vim-bufonly'
 Plugin 'godlygeek/csapprox'
 Plugin 'scrooloose/nerdtree'
 Plugin 'MattesGroeger/vim-bookmarks'
@@ -154,7 +156,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-scripts/vimprj'
 Plugin 'vim-scripts/DfrankUtil'
 Plugin 'vim-scripts/indexer.tar.gz'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
 Plugin 'tpope/vim-surround'
 Plugin 'WolfgangMehner/vim-plugins'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -165,7 +168,7 @@ Plugin 'vim-scripts/taglist.vim'
 " Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 " Plugin 'gilligan/vim-lldb'
-" Plugin 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mattn/webapi-vim'
@@ -186,8 +189,8 @@ map <leader>t <C-p>
 map <leader>y :CtrlPBuffer<cr>
 let g:ctrlp_show_hidden=1
 let g:ctrlp_working_path_mode=0
-let g:ctrlp_max_height=30
-
+let g:ctrlp_max_height=20
+let g:ctrlp_match_window = 'top,order:btt,min:1,max:10,results:20'
 " CtrlP -> override <C-o> to provide options for how to open files
 let g:ctrlp_arg_map = 1
 
@@ -230,24 +233,24 @@ let g:gitgutter_sign_column_always = 1
 highlight clear SignColumn
 
 " YouCompleteMe
-" let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" let g:ycm_collect_identifiers_from_tag_files = 1
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:ycm_collect_identifiers_from_tag_files = 1
 " let g:ycm_autoclose_preview_window_after_completion = 1
 " let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_key_invoke_completion = '<C-Space>'
-" let g:ycm_filetype_blacklist={
-"             \ 'tagbar':1,
-"             \ 'qf':1,
-"             \ 'notes':1,
-"             \ 'markdown':1,
-"             \ 'unite':1,
-"             \ 'text':1,
-"             \ 'vimwiki':1,
-"             \ 'gitcommit':1,
-"             \}
-" nnoremap <leader>jd :YcmCompleter GoTo<CR>
+let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_filetype_blacklist={
+            \ 'tagbar':1,
+            \ 'qf':1,
+            \ 'notes':1,
+            \ 'markdown':1,
+            \ 'unite':1,
+            \ 'text':1,
+            \ 'vimwiki':1,
+            \ 'gitcommit':1,
+            \}
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " Searching the file system
 map <leader>' :NERDTreeToggle<cr>
@@ -350,7 +353,14 @@ map! <c-\> <ESC>:q<CR>
 " map <Leader>ws :ChooseWin<cr>
 " }}}
 
+
 " autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+au BufRead,BufNewFile *.h,*.c set filetype=c
+let g:C_SourceCodeExtensions='h c'
+
+" bash-support
+au FileType zsh set filetype=sh
 
 hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
 hi TabLineFill  ctermfg=Black  ctermbg=Green     cterm=NONE
@@ -383,4 +393,9 @@ nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
+let g:C_CFlags='-Wall  -g -O0 -c -std=c99'
+let g:C_LFlags='-Wall -pthread -g -O0'
+
+noremap   \a        :A<CR>
+inoremap  \a   <C-C>:A<CR>
 
