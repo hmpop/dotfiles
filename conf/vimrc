@@ -165,6 +165,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/taglist.vim'
+Plugin 'tomasr/molokai'
 " Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 " Plugin 'gilligan/vim-lldb'
@@ -182,7 +183,8 @@ filetype plugin indent on
 set background=dark
 let g:solarized_termcolors=256
 " let g:airline_theme='dark'
-colorscheme solarized
+" colorscheme solarized
+colorscheme molokai
 
 " CtrlP
 map <leader>t <C-p>
