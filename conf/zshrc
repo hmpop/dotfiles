@@ -3,8 +3,7 @@ export GITHUB_USER="hmpopg@gmail.com"
 #export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin # Reorder PATH so local bin is first
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
-export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
-export CFLAGS="-g -std=c99 -Wall -O0"
+#export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
 export EDITOR="vim"
 #export TERM="xterm-256color"
 export CLICOLOR=1
@@ -27,6 +26,8 @@ function get_ruby_version() {
 
 # Tmux {{{
 # Makes creating a new tmux session (with a specific name) easier
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
 function tmuxopen() {
   export TERM=screen-256color; tmux attach -t $1
 }
@@ -44,7 +45,7 @@ function tmuxkill() {
 
 # Alias {{{
 alias vi="vim"
-#alias vim="mvim -v"
+alias vim="mvim -v"
 alias curl="curl -w '\n'"
 alias r="source ~/.zshrc"
 alias tat='tmux new-session -As $(basename "$PWD" | tr . -)' # will attach if session exists, or create a new session
