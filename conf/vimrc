@@ -124,7 +124,7 @@ let g:netrw_liststyle=3
 let g:formatdef_min_c='"astyle --mode=c --style=kr -k3 --pad-oper --pad-header --break-blocks"'
 let g:formatters_c = ['min_c']
 
-noremap <silent><F3> :Autoformat<CR>
+noremap <silent><leader>f :Autoformat<CR>
 " }}}
 
 " Plugins {{{
@@ -147,12 +147,15 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'schickling/vim-bufonly'
 Plugin 'godlygeek/csapprox'
+Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'scrooloose/nerdtree'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Raimondi/delimitMate'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'wannesm/wmgraphviz.vim'
 "Plugin 'vim-scripts/vimprj'
 "Plugin 'vim-scripts/DfrankUtil'
 "Plugin 'vim-scripts/indexer.tar.gz'
@@ -165,12 +168,15 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/taglist.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'tomasr/molokai'
 Plugin 'vim-utils/vim-man'
 " Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 " Plugin 'gilligan/vim-lldb'
 Plugin 'mileszs/ack.vim'
+Plugin 'fatih/vim-go'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'airblade/vim-gitgutter'
 "Plugin 'mattn/webapi-vim'
@@ -365,13 +371,13 @@ let g:C_SourceCodeExtensions='h c'
 " bash-support
 au FileType zsh set filetype=sh
 
-hi TabLine      ctermfg=Black  ctermbg=Green     cterm=NONE
-hi TabLineFill  ctermfg=Black  ctermbg=Green     cterm=NONE
-hi TabLineSel   ctermfg=White  ctermbg=DarkBlue  cterm=bold
+hi TabLine      ctermfg=Gray  ctermbg=DarkGray     cterm=NONE
+hi TabLineFill  ctermfg=Gray   ctermbg=DarkGray     cterm=NONE
+hi TabLineSel   ctermfg=Black  ctermbg=DarkBlue  cterm=bold
 
 " Vimgdb setting
-let g:vimgdb_debug_file=""
-run macros/gdb_mappings.vim
+" let g:vimgdb_debug_file=""
+" run macros/gdb_mappings.vim
 
 if has("cscope")
     set csto=0
@@ -402,3 +408,16 @@ let g:C_LFlags='-Wall -pthread -g -O0'
 noremap   \a        :A<CR>
 inoremap  \a   <C-C>:A<CR>
 
+" vim-go custom mappings
+au FileType go nmap <leader>gi <Plug>(go-implements)
+au FileType go nmap <leader>hm <Plug>(go-doc)
+au FileType go nmap <leader>i <Plug>(go-info)
+au FileType go nmap <leader>rr <Plug>(go-run)
+au FileType go nmap <leader>rc <Plug>(go-build)
+au FileType go nmap <leader>rt <Plug>(go-test)
+au FileType go nmap <leader>cn <Plug>(go-rename)
+au FileType go nmap <leader>co <Plug>(go-coverage-toggle)
+au FileType go nmap <leader>im :GoImports<CR>
+
+" vim-go settings
+let g:go_fmt_command = "goimports"
