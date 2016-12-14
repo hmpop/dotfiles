@@ -3,7 +3,7 @@
 	email = hmpopg@gmail.com
 [core]
 	autocrlf = input
-	excludesfile = /Users/Min/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vim
 [filter "media"]
 	clean = git-media-clean %f
