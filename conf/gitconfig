@@ -14,3 +14,5 @@
 	required = true
 [mergetool]
 	prompt = false
+[credentials]
+	helper = store
