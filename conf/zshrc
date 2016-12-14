@@ -4,7 +4,6 @@ export GITHUB_USER="hmpopg@gmail.com"
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
-export CFLAGS="-g -std=c99 -Wall -O0"
 export EDITOR="vim"
 #export TERM="xterm-256color"
 export CLICOLOR=1
