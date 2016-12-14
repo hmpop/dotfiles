@@ -3,11 +3,7 @@ export GITHUB_USER="hmpopg@gmail.com"
 #export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin # Reorder PATH so local bin is first
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
-<<<<<<< HEAD
 export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
-=======
-#export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
->>>>>>> 3a80ee82b2f8180e689780e43e8c3435cb200e3a
 export EDITOR="vim"
 #export TERM="xterm-256color"
 export CLICOLOR=1
