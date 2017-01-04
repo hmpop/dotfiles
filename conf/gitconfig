@@ -16,3 +16,5 @@
 	prompt = false
 [credentials]
 	helper = store
+[push]
+	default = simple
