@@ -366,7 +366,9 @@ map! <c-\> <ESC>:q<CR>
 " autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 au BufRead,BufNewFile *.h,*.c set filetype=c
+map <leader>k <Plug>(Man)
 let g:C_SourceCodeExtensions='h c'
+
 
 " bash-support
 au FileType zsh set filetype=sh

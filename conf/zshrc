@@ -3,16 +3,18 @@ export GITHUB_USER="hmpopg@gmail.com"
 #export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin # Reorder PATH so local bin is first
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
-export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
+#export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
 export EDITOR="vim"
+export NVM_DIR="$HOME/.nvm"
+export GEM_HOME="$HOME/.gem/ruby/2.0.0"
+export GEM_PATH="$HOME/.gem/ruby/2.0.0"
 #export TERM="xterm-256color"
-export CLICOLOR=1
-export LSCOLORS=Gxfxcxdxbxegedabagacad
+#export CLICOLOR=1
+#export LSCOLORS=Gxfxcxdxbxegedabagacad
 #export LS_COLORS=Gxfxcxdxbxegedabagacad
 
-export GOPATH=~/Work/Golang
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+#export LC_ALL=en_US.UTF-8
+#export LANG=en_US.UTF-8
 
 #export GOPATH=$HOME/Golang
 #export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
