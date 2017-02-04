@@ -47,6 +47,7 @@ function tmuxkill() {
 # }}}
 
 # Alias {{{
+alias kali="VBoxManage startvm Kali-Linux-2016.2-vbox-amd64 --type headless"
 alias vi="vim"
 alias vim="mvim -v"
 alias curl="curl -w '\n'"
